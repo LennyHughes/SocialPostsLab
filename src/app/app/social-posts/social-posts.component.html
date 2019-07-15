@@ -1,0 +1,9 @@
+<h1>Thought of the Day</h1>
+<button (click)="showForm()" class="btn btn-default btn-block">New Thought</button>
+
+<div class="post-container">
+    <app-post *ngFor="let post of posts.slice().reverse()" [post]="post"></app-post>
+    <div *ngIf="show" class="form-container">
+        <app-post-form (submitted)="onSubmit($event)"></app-post-form>
+    </div>    
+</div>
